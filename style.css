@@ -1,0 +1,253 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: #f9f9f9;
+  color: #333;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+  background: #d32f2f;
+  color: white;
+  padding: 5px;
+  left: 0;
+}
+
+.nav-box ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.nav-box ul li {
+  margin: 10px;
+}
+
+.nav-box ul li a {
+  background: #000e3e;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.nav-box ul li a:hover {
+  background: #38383e;
+}
+
+.dark-mode .nav-box ul li a {
+  background-color: #000028be;
+  color: #22d2f5;
+}
+
+.dark-mode .nav-box ul li a:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+#home, #events, #contact {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 90px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  overflow: hidden;
+}
+
+#home { background-image: url('me.jpg'); }
+#events { background-image: url('tampi.jpg'); }
+#contact { background-image: url('all\ of\ us.jpg'); }
+
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.text-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.textarea {
+  font-weight: 200;
+  width: 100%;
+}
+
+.image-section {
+  flex: 1;
+  text-align: right;
+}
+
+.image-section img {
+  width: 350px;
+  margin: 20px auto;
+  display: block;
+}
+
+.featured-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.page-section {
+  padding: 40px 20px;
+  min-height: 50vh;
+  max-width: 1200px;
+  margin: auto;
+  display: none;
+}
+
+.page-section.show {
+  display: block;
+}
+
+.album-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.album-section h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.album-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.album-container img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.album-container img:hover {
+  transform: scale(1.05);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button, .dark-toggle {
+  padding: 12px 20px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover, .dark-toggle:hover {
+  background: #b71c1c;
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 2px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.profile-photo {
+  width: 250px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 6px 15px rgb(170, 140, 140);
+}
+
+@media (max-width: 1024px) {
+  .album-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .album-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .album-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .text-section,
+  .image-section {
+    text-align: center;
+  }
+
+  .guide {
+    min-height: 50vh;
+    max-width: 1200px;
+    margin: auto;
+    display: none;
+    padding: 2rem 0;
+  }
+}
